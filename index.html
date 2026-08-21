@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; script-src &#39;self&#39; &#39;wasm-unsafe-eval&#39;; style-src &#39;self&#39;; font-src &#39;self&#39;; img-src &#39;self&#39; data:; connect-src &#39;self&#39;; worker-src &#39;self&#39; blob:; manifest-src &#39;self&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;; frame-ancestors &#39;none&#39;">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>DPGen — gerador determinístico de senhas</title>
+    <meta
+      name="description"
+      content="DPGen (Deterministic Password Generator) gera a mesma senha forte a partir das mesmas entradas, usando Argon2id no seu navegador. Sem cofre, sem servidor, sem armazenamento."
+    />
+
+    <!-- A cor da barra do navegador acompanha o tema escolhido pelo sistema. -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f7fb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f14" />
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+
+    <!-- Sem crawler de rede: a página não depende de nada externo, mas também
+         não deve indexar receitas coladas no fragmento. -->
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="referrer" content="no-referrer" />
+
+    <!-- Scrapers de link não resolvem caminhos relativos com confiança, então
+         estas precisam ser absolutas (veja VITE_SITE_URL no .env). -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andradasdev.github.io/dpgen/" />
+    <meta property="og:title" content="DPGen — gerador determinístico de senhas" />
+    <meta
+      property="og:description"
+      content="Sua senha não é guardada: ela é recalculada com Argon2id a partir da sua senha-mestra. Mesmas entradas, mesma senha, em qualquer aparelho."
+    />
+    <meta property="og:image" content="https://andradasdev.github.io/dpgen/icons/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="module" crossorigin src="/dpgen/assets/index-wrhiCkJ6.js"></script>
+    <link rel="stylesheet" crossorigin href="/dpgen/assets/index-B5Y78dSF.css">
+  <link rel="manifest" href="/dpgen/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 2rem; font-family: system-ui, sans-serif; line-height: 1.6">
+        <h1>JavaScript é necessário</h1>
+        <p>
+          Toda a derivação de chave acontece no seu navegador — sem JavaScript não há
+          nada para executar, e nenhum servidor para fazer isso no seu lugar. Se você
+          prefere não habilitar, use a implementação de referência em Node descrita no
+          repositório: ela produz exatamente a mesma senha.
+        </p>
+      </div>
+    </noscript>
+  </body>
+</html>
